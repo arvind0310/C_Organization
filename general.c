@@ -351,3 +351,27 @@ int main()
 // }
 
 //+++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// int fun()
+// {
+//     // return 2;
+//     printf("hii\n");
+//     return 0;
+    
+// }
+// int main()
+// {
+//     int x=0;
+//     while(x<3)
+//     {
+//         if(x==2)
+//         {
+//             fun();
+//             printf("*****\n");
+//             break;
+//         }
+//         printf("%d\n",x);
+//         x++;
+//     }
+// }
