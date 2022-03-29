@@ -9,7 +9,7 @@ int getChildProcessCount(int id)
     char command[100] = {0};
     FILE *fp = NULL;
     char buff[3] = {0};
-    sprintf(command, "ps --ppid %d --no-headers | grep -v '[sh] <defunct>' | wc --lines ", id);
+    sprintf(command, "ps --ppid %d --no-headers | wc --lines", id);
     fp = popen(command, "r");
     if (fp == NULL)
     {
@@ -23,7 +23,6 @@ int getChildProcessCount(int id)
             printf("fail1\n");
             return 0;
         }
-	printf("val->%s\n",buff);
         return atoi(buff);
     }
 }
@@ -74,4 +73,3 @@ int main()
     printf("BYE\n");
     return 0;
 }
-

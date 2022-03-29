@@ -261,3 +261,33 @@ int getChildProcessCount()
 //     return (count);
 // }
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <unistd.h>
+// #include <sys/types.h>
+// int main()
+// {
+//     int i;
+//     pid_t pid;
+//     while(i < 5){
+
+//     pid = fork();
+//     if (pid < 0)
+//     {
+//         printf("error");
+//     }
+//     else if (pid == 0)
+//     {
+//         printf("I am child  id : %d\n", getpid());
+//         printf("childNum : %d\n",i);
+//     }
+//     else
+//     {
+//         //wait // so that first child process run
+//         printf("I am parent havind id : %d\n", getpid());
+//         i++;
+//     }
+// }                                                                                                                                              
+// }
+
