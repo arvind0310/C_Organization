@@ -166,15 +166,54 @@ int main()
 
 //++++++++++++++++++++++++++++++++++++++++++++++++
 
+//+++++++++++++++++++++++++++++++++++++++++
 
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main()
+// {
+//     char str[20]="arvind";
+//     char *ptr,*dev;
+//     dev = (char *)malloc(sizeof(char));
+//     printf("dev1->%p\n",dev);
+//     ptr = dev;
+//     dev=NULL;
+//     printf("ptr->%p\n",ptr);
+//     printf("dev2->%p\n",dev);
+//     strcpy(ptr, str); //**************
+//     printf("%s\n", ptr);
+// }
+
+
+//+++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main()
+// {
+//     char *ptr,*dev;
+//     dev = (char *)malloc(sizeof(char));
+//     printf("dev1->%p\n",dev);
+//     ptr = dev;
+//     dev=NULL;
+//     printf("ptr->%p\n",ptr);
+//     printf("dev2->%p\n",dev);
+//     strcpy(ptr,"arvind"); //********
+//     printf("%s\n", ptr);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++
 // #include <stdio.h>
 // #include<string.h>
 // #include <stdlib.h>
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// void main(int argc, char **argv)
+// // void main(int argc, char **argv) 
+// void main(int argc, char *argv[])
 // {
-        // printf("command line arg : %s\n", argv[0]);
+//         printf("command line arg : %s\n", argv[0]);
 //         printf("command line arg : %s\n", argv[1]);
 //         printf("command line arg : %s\n", argv[2]);
 //         printf("command line arg : %s\n", argv[3]);

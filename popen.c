@@ -1,7 +1,29 @@
 
-/* fp = popen(cmd, "r"); >> will read the output fro the comand and can save it t file
+/* fp = popen(cmd, "r"); >> will read the output from the comand and can save it t file
 
   fp = popen(cmd, "w"); >> this will directly run to your terminal..( see below code)
+
+  -----------------------------------------
+  # while (!feof(fp))
+    if (fgets(value, 100, fp) != NULL)
+
+
+   # while (fscanf(fp, "%s", value) != EOF)
+    if (fgets(value, 100, fp) != NULL)
+    
+    
+   # while((fscanf(fp,"%s",value))!=-1)
+    if (fgets(value, 100, fp) != NULL)
+
+    
+          #    fp = popen(cmd_scanID,"r"); // when there is single o/p from command
+                if(fp == NULL)
+                     return;
+                if(fgets(output,64,fp) == NULL){
+                        pclose(fp);
+
+
+
   */
 
 
@@ -288,4 +310,66 @@ int main()
 //         fclose(fp);
 //     }
 // }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// #include <stdio.h>
+
+// int main() {
+//     FILE *fp;
+//     int num;
+
+//     fp = fopen("file.txt", "w");
+//     printf("Enter any number:\n");
+//     scanf("%d", &num);
+//     putw(num, fp);
+//     fclose(fp);
+//     printf("%d\n", num);
+
+//     return 0;
+// }
+
+//+++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// int main()
+// {
+//     FILE *fp;
+//     int ch;
+//     fp = fopen("file1.txt", "w");
+//     for (int i = 0; i < 5; i++)
+//     {
+//         putw(i, fp);
+//     }
+//     fclose(fp);
+//     fp = fopen("file1.txt", "r");
+//     for (int i = 0; i < 5; i++)
+//     {
+//         ch = getw(fp);
+//         printf("%d\n", ch);
+//     }
+//     fclose(fp);
+// }
+
+///+++++++++++++++++++++++++++++++++++++++
+
+// #include<stdio.h>
+// int main( ){
+//    FILE *fp;
+//    int i;
+//    fp = fopen ("num.txt", "w");
+//    for (i =1; i<= 10; i++){
+//       putw (i, fp);
+//    }
+//    fclose (fp);
+//    fp =fopen ("num.txt", "r");
+//    printf ("file content is:\n");
+//    for (i =1; i<= 10; i++){
+//       i= getw(fp);
+//       printf ("%d",i);
+//       printf("\n");
+//    }
+//    fclose (fp);
+//    return 0;
+// }
+
 

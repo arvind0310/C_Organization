@@ -183,7 +183,6 @@ int getChildProcessCount()
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 // #include <stdio.h>
 // #include <sys/types.h>
 // #include <sys/wait.h>
@@ -206,7 +205,7 @@ int getChildProcessCount()
 //             waitpid(forked_pid, &status, 0);
 //             /* parent process - count child and descendents */
 //             i++;
-//             count += WEXITSTATUS(status); 
+//             count += WEXITSTATUS(status);
 //         } else {
 //             /* Child process - init with self count */
 //             count = 1;
@@ -245,7 +244,7 @@ int getChildProcessCount()
 //         if (forked_pid > 0) {
 //             waitpid(forked_pid, &status, 0);
 //             /* parent process - count child and descendents */
-//             count += WEXITSTATUS(status); 
+//             count += WEXITSTATUS(status);
 //         } else {
 //             /* Child process - init with self count */
 //             printf("hii from child\n");
@@ -288,6 +287,119 @@ int getChildProcessCount()
 //         printf("I am parent havind id : %d\n", getpid());
 //         i++;
 //     }
-// }                                                                                                                                              
+// }
 // }
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
+
+// int main(void) {
+//     int processes = 4;
+//     int i;
+//     int fork_result;
+//     int number_of_children;
+//     for (i = 1; i <= processes; i++) {
+//        sleep(10);
+//         fork_result = fork();
+//         if (fork_result > 0) {
+//             printf("parent %d says: hello child #%d, how are you?\n", getpid(),fork_result);
+//             number_of_children++;
+//         } else if (fork_result == 0) {
+//             printf("pid: %d\n", getpid());
+//             exit(0);
+//         } else if (fork_result < 0) {
+//             printf("parent says: fork() failed\n");
+//         }
+//     }
+//     int status;
+//     for (i = 1; i <= number_of_children; i++) {
+//         wait(&status);
+//     }
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <signal.h>
+
+volatile sig_atomic_t shutdown_flag = 1;
+
+void cleanupRoutine(int signal_number)
+{
+   shutdown_flag = 0;
+}
+
+int main(void)
+{
+   int wstatus;
+   for (int i = 0; i < 5; i++)
+   {
+      pid_t c_pid = fork();
+      if (c_pid == -1)
+      {
+         perror("fork");
+         exit(EXIT_FAILURE);
+      }
+
+      if (c_pid == 0)
+      {
+         printf("printed from child process - %d\n", getpid());
+
+         int count = 0;
+
+         struct sigaction sigterm_action;
+         memset(&sigterm_action, 0, sizeof(sigterm_action));
+         sigterm_action.sa_handler = &cleanupRoutine;
+         sigterm_action.sa_flags = 0;
+
+         // Mask other signals from interrupting SIGTERM handler
+         if (sigfillset(&sigterm_action.sa_mask) != 0)
+         {
+            perror("sigfillset");
+            exit(EXIT_FAILURE);
+         }
+         // Register SIGTERM handler
+         if (sigaction(SIGTERM, &sigterm_action, NULL) != 0)
+         {
+            perror("sigaction SIGTERM");
+            exit(EXIT_FAILURE);
+         }
+
+         while (shutdown_flag)
+         {
+            count += 1;
+         }
+         printf("count = %d\n", count);
+
+         exit(EXIT_SUCCESS);
+      }
+      else
+      {
+         printf("printed from parent process - %d\n", getpid());
+         int ret;
+
+         sleep(15);
+
+         ret = kill(c_pid, SIGKILL);
+         if (ret == -1)
+         {
+            perror("kill");
+            exit(EXIT_FAILURE);
+         }
+
+         if (waitpid(c_pid, &wstatus, WUNTRACED | WCONTINUED) == -1)
+         {
+            perror("waitpid");
+            exit(EXIT_FAILURE);
+         }
+      }
+   }
+   exit(EXIT_SUCCESS);
+}
