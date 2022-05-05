@@ -27,18 +27,30 @@
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int webSite(char *resp)
+// {
+//     char ipAddress[60];
+//     printf("%s\n", resp);
+//     strncpy(ipAddress, resp + 6, strlen(resp + 6));
+//     printf("%s\n", ipAddress);
+// }
+// int main()
+// {
+//     char resp[] = "wss://srfr.dev2.cobo.solutions";
+//     webSite(resp);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int webSite(char *resp)
-{
-    char ipAddress[60];
-    printf("%s\n", resp);
-    strncpy(ipAddress, resp + 6, strlen(resp + 6));
-    printf("%s\n", ipAddress);
-}
 int main()
 {
-    char resp[] = "wss://srfr.dev2.cobo.solutions";
-    webSite(resp);
+    printf("123456789"+3);
+
 }

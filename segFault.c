@@ -42,18 +42,28 @@
 //     getName(name);
 // }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 // #include <stdlib.h>
 // #include <stdio.h>
 // #include <string.h>
 // #include <unistd.h>
 // int main()
 // {
+//     //char ptr[10]="arvind";
 //     char *ptr="arvind";
 //     printf("%s\n",ptr);
+//     printf("%p\n",ptr);
 //     printf("%c\n",*(ptr));
-//     *ptr='x';  // seg fault cz you are changing the read only memory
-//     printf("%s\n",ptr);
+//     (ptr++);
+//     printf("%c\n",*(ptr));
+//     *(ptr)='x';
+//     printf("%c\n",*(ptr));
+
+
+
+    // *ptr='x';  // seg fault cz you are changing the read only memory
+    // printf("%s\n",ptr);
 
 // }
-
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++

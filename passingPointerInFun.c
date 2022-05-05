@@ -26,37 +26,37 @@
 
 
 
- // ++++++++++++ running ++++++++
+ // ++++++++++++ running ++++++++++++++++++++
 
-// #include <stdlib.h>
-// #include <stdio.h>
-// #include <string.h>
-// #include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
-// struct student
-// {
-//     int age;
-//     char name[10];
-//     int class; 
-// };
+struct student
+{
+    int age;
+    char name[10];
+    int class; 
+};
 
-// void getData(struct student *arvind)
-// {
-//     printf("age is:%d\n", arvind->age);
-//     printf("name is:%s\n", arvind->name);
-//     printf("class is:%d\n", arvind->class);
+void getData(struct student *arvind)
+{
+    printf("age is:%d\n", arvind->age);
+    printf("name is:%s\n", arvind->name);
+    printf("class is:%d\n", arvind->class);
 
-// }
+}
 
-// int main()
-// {
-//     struct student *ptr;
-//     ptr = (struct student *)malloc(sizeof(struct student));
+int main()
+{
+    struct student *ptr;
+    ptr = (struct student *)malloc(sizeof(struct student));
 
-//     ptr->age = 1;
-//     strcpy(ptr->name, "arvind");
-//     ptr->class = 12;
+    ptr->age = 1;
+    strcpy(ptr->name, "arvind");
+    ptr->class = 12;
 
-//     getData(ptr);
-//     return 0;
-// }
+    getData(ptr);
+    return 0;
+}
