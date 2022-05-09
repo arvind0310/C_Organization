@@ -84,55 +84,27 @@
 //     }
 // }
 
-
-
-
-
-
-
 //++++++++++++++++++++++++++++++++++++++++++++++
-
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
-// int main()
-// {
-//     int num = 5;
-//     fibb(0, 1, 10);
-// }
-
-// int fibb(int a, int b, int n)
-// {
-//     printf("%d\n", a);
-//     printf("%d\n", b);
-//     int sum=a+b;
-
-//     for (int i = 0; i < n - 2; i++)
-//     {
-//         b = a + b;
-//         a = b - a;
-//         sum+=b;
-//         printf("%d\n", b);
-//     }
-//     printf("sum: %d\n", sum);
-// }
-
-//+++++++++++++++++++++++++
-
-
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+int *count;
+
+void fun();
+
+void fun()
+{
+    count = (int *)malloc(sizeof(int));
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d\n", i);
+        (*count)++;
+    }
+    printf("final:%d\n", *count);
+}
 int main()
 {
-    int arr[] = {1, 1, 2, 2, 3, 3, 7, 5, 5, 8, 8};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    printf("size:%d\n", size);
-    int element = arr[0];
-    for (int i = 1; i < size; i++)
-    {
-        element = element ^ arr[i];
-    }
-    printf("ans:%d\n", element);
+    fun();
+    return 0;
 }

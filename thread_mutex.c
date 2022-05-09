@@ -1,26 +1,24 @@
 
-// #include <stdio.h>
-// #include <unistd.h>
-// #include <pthread.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <pthread.h>
 
-// void *myTurn(void *arg) //>> void type pointer is passed   // or void* myTurn()
-// {
-//     for (int i = 0; i < 5; i++)
-//     {
-//         printf("thread calling  %d\n", i);
-//     }
-// }
+void myTurn(void *arg) //>> void type pointer is passed   // or void* myTurn()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        printf("thread calling  %d\n", i);
+    }
+}
 
-// int main()
-// {
+int main()
+{
 
-//     pthread_t newthread;
-
-//     pthread_create(&newthread, NULL, myTurn, NULL);
-//     pthread_join(newthread, NULL); // wait till thread is finshed
-// other wise main will end before thread is completed
-//     return 0;
-// }
+    pthread_t newthread;
+    pthread_create(&newthread, NULL, (void*)myTurn, NULL);
+    pthread_join(newthread, NULL); // wait till thread is finshed other wise main will end before thread is completed
+    return 0;
+}
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -160,54 +158,54 @@
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include <stdio.h>
-#include <unistd.h>
-#include <pthread.h>
-pthread_t newthread1;
-pthread_t newthread2;
-void *myTurn(void *arg)
-{
-    for (int i = 0; i <= 4; i++)
-    {
-        sleep(1);
-        printf("my turn %d\n", i);
-    }
-    return NULL;
-}
-void *yourTurn(void *arg)
-{
-    for (int i = 0; i <= 4; i++)
-    {
-        sleep(2);
-        printf("your turn %d\n", i);
-    }
-}
+// #include <stdio.h>
+// #include <unistd.h>
+// #include <pthread.h>
+// pthread_t newthread1;
+// pthread_t newthread2;
+// void *myTurn(void *arg)
+// {
+//     for (int i = 0; i <= 4; i++)
+//     {
+//         sleep(1);
+//         printf("my turn %d\n", i);
+//     }
+//     return NULL;
+// }
+// void *yourTurn(void *arg)
+// {
+//     for (int i = 0; i <= 4; i++)
+//     {
+//         sleep(2);
+//         printf("your turn %d\n", i);
+//     }
+// }
 
-void *threadFun()
-{
-    int x = 1;
-    switch (x)
-    {
-    case 1:
-    {
-        pthread_create(&newthread1, NULL, myTurn, NULL);
-        break;
-    }
-    }
-    pthread_join(newthread1, NULL); // wait untill it finsih execution
+// void *threadFun()
+// {
+//     int x = 1;
+//     switch (x)
+//     {
+//     case 1:
+//     {
+//         pthread_create(&newthread1, NULL, myTurn, NULL);
+//         break;
+//     }
+//     }
+//     pthread_join(newthread1, NULL); // wait untill it finsih execution
 
-    // pthread_create(&newthread2, NULL, yourTurn, NULL);
-    // pthread_join(newthread2, NULL); // wait untill it finsih execution
-}
+//     // pthread_create(&newthread2, NULL, yourTurn, NULL);
+//     // pthread_join(newthread2, NULL); // wait untill it finsih execution
+// }
 
-int main()
-{
-    pthread_t t1;
-    pthread_create(&t1, NULL, (void *)&threadFun, NULL);
-    pthread_join(t1, NULL);
-    printf("done");
-    return 0;
-}
+// int main()
+// {
+//     pthread_t t1;
+//     pthread_create(&t1, NULL, (void *)&threadFun, NULL);
+//     pthread_join(t1, NULL);
+//     printf("done");
+//     return 0;
+// }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

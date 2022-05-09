@@ -78,25 +78,28 @@
 //+++++++++++++++++++++++++++++++++++++++
 
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-int main()
-{
-    char str[30]="arvind/kumar.yadav";
-    char *ptr;
-    ptr=strtok(str,"/");
-    printf("%s\n",ptr);
-    // ptr[2]='x';
-    // printf("%s\n",ptr);
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main()
+// {
+//     char str[30]="arvind/kumar.yadav";
+//     char *ptr;
+//     ptr=strtok(str,"/");
+//     printf("%s\n",ptr);
+//     // ptr[2]='x';
+//     // printf("%s\n",ptr);
 
-    ptr=strtok(NULL,"/"); // no '/', then will print base elemnt at that address
-    printf("%s\n",ptr); // in buf --> kumar.yadav
+//     ptr=strtok(NULL,"/"); // no '/', then will print base elemnt at that address
+//     printf("%s\n",ptr); // in buf --> kumar.yadav
  
-    // ptr=strtok(NULL,"/");  /*seg fault */
-    // printf("%s\n",ptr);
+//     // ptr=strtok(NULL,"/");  /*seg fault */
+//     // printf("%s\n",ptr);
 
-    // printf("%s\n",strtok(NULL,"/")); /*seg fault */
+//     // printf("%s\n",strtok(NULL,"/")); /*seg fault */
 
-} 
+// } 
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++
