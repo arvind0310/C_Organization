@@ -46,8 +46,8 @@
 //     printf("mask:%s\n", mask2);
 // }
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdlib.h>
 // #include <stdio.h>
@@ -70,13 +70,12 @@
 //     ptr = strtok(NULL, "/");  // return the element at base add if not found the element at first
 //     printf("%s\n", ptr);
 
-//     // ptr = strtok(NULL, "/");
+//     // ptr = strtok(NULL, "/");  //error
 //     // printf("%s\n", ptr);
 // }
 
 
 //+++++++++++++++++++++++++++++++++++++++
-
 
 // #include <stdlib.h>
 // #include <stdio.h>

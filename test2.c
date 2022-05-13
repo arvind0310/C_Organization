@@ -8,14 +8,14 @@ int main()
     char temp_baseFilter[150] = {0}, temp_grepFilter[100] = {0}, grepFilter[100] = {0}, sedFilter[100] = {0};
     strcpy(temp_baseFilter, baseFilter);
     ptr = strtok(temp_baseFilter, ";");
-    printf("ptr:%s\n", ptr);
+    printf("ptr:%s\n", ptr); //***
     strcpy(temp_grepFilter, ptr);
     ptr = strtok(NULL, ";");
-    printf("ptr:%s\n", ptr);
+    printf("ptr:%s\n", ptr); //***
     if (ptr)
     {
         sed = strtok(ptr, ",");
-        printf("sed:%s\n", sed);
+        printf("sed:%s\n", sed); //****
     }
 
     /*creates sed filter having more then one sed command eg. xyz,abc then result will be | sed 'xyz' | sed 'abc' */
@@ -26,17 +26,17 @@ int main()
         strcat(sedFilter, "//'");
 
         sed = strtok(NULL, ",");
-        printf("sedFilter:%s\n", sedFilter);
+        printf("sedFilter:%s\n", sedFilter); //****
     }
     ptr = strtok(temp_grepFilter, ",");
-    printf("ptr:%s\n", ptr);
+    printf("ptr:%s\n", ptr); //****
 
     while (ptr != NULL)
     {
         strcat(grepFilter, " | grep '");
         strcat(grepFilter, ptr);
         strcat(grepFilter, "'");
-        printf("grepFilter:%s\n", grepFilter);
+        printf("grepFilter:%s\n", grepFilter); //****
 
         ptr = strtok(NULL, ",");
     }

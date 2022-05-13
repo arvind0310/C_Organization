@@ -86,25 +86,74 @@
 
 //++++++++++++++++++++++++++++++++++++++++++++++
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int *count;
+
+// void fun();
+
+// void fun()
+// {
+//     count = (int *)malloc(sizeof(int));
+//     for (int i = 0; i < 5; i++)
+//     {
+//         printf("%d\n", i);
+//         (*count)++;
+//     }
+//     printf("final:%d\n", *count);
+// }
+// int main()
+// {
+//     fun();
+//     return 0;
+// }
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int *count;
-
-void fun();
-
-void fun()
-{
-    count = (int *)malloc(sizeof(int));
-    for (int i = 0; i < 5; i++)
-    {
-        printf("%d\n", i);
-        (*count)++;
-    }
-    printf("final:%d\n", *count);
-}
 int main()
 {
-    fun();
-    return 0;
+    char str[80] = "a.b.c.d.e.f";
+    // char c[2] =".";
+    char *token;
+    token = strtok(str, ".");
+    while (token != NULL)
+    {
+        printf(" %s\n", token);
+        token = strtok(NULL, ".");
+        printf("%p\n",NULL);
+    }
+
+    return (0);
 }
+//+++++++++++++ strtok_r ++++++++++++++++++++++++++++++++++
+
+/* The strtok_r() function is thread-safe and stores its state in a user-supplied buffer 
+instead of possibly using a static data area that may be overwritten by an unrelated 
+call from another thread. */
+
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     char str[80] = "a.b.c.d.e.f";
+//     // char c[2] =".";
+//     char *token;
+//     char* context = NULL;
+//     token = strtok_r(str, ".",&context);
+//     while (token != NULL)
+//     {
+//         printf(" %s\n", token);
+//         token = strtok_r(NULL, ".",&context);
+//     }
+
+//     return (0);
+// }
