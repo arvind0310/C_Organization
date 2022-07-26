@@ -404,15 +404,116 @@ int getChildProcessCount()
 //    exit(EXIT_SUCCESS);
 // }
 
-
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
+// int main()
+// {
+//    int val=1222222222222;
+//    printf("%lu\n",sizeof(val));
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++=
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
+// int main()
+// {
+//    int x = 5;
+//    if (x > 4)
+//    {
+//       printf("1\n");
+//    }
+//    else if (x == 5)
+//    {
+//       printf("2\n");
+//    }
+//    else
+//    {
+//       printf("3\n");
+//    }
+// }
+
+//+++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char i;
+//    for (i = 0; i < 129; i++) // after 127 it will go -128,-127 ...
+//    {
+//       printf("%d\n",i);
+//    }
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char res[100];
+//    char name[20] = "arvind age is:";
+//    int age = 23;
+//    char school[20] = "and study in";
+//    int grade = 10;
+//    sprintf(res, "%s %d %s %d", name, age, school, grade);
+//    printf("%s\n",res);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char val[15] = "1";
+//    char name[10];
+//    sprintf(name,"TempSensor-%d",atoi(val));
+//    printf("%s\n",name);
+// }
+
+//++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char *str = "arvind";
+//    printf("%c\n",*str);
+
+//    printf("hello\n"+3);
+// }
+
+//+++++++++++++++++++++++++++++
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <string.h>
 int main()
 {
-   int val=1222222222222;
-   printf("%lu\n",sizeof(val));
+   int x = 6;
+   if (x > 8)
+   {
+      printf(">2\n");
+   }
+   else if (x > 3)
+   {
+      printf(">3\n");
+   }
+   else if (x>9)
+   {
+      printf("x>4\n");
+   }
+   else
+   {
+      printf("bye\n");
+   }
 }
-

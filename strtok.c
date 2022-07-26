@@ -46,7 +46,6 @@
 //     printf("mask:%s\n", mask2);
 // }
 
-
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdlib.h>
@@ -74,7 +73,6 @@
 //     // printf("%s\n", ptr);
 // }
 
-
 //+++++++++++++++++++++++++++++++++++++++
 
 // #include <stdlib.h>
@@ -92,13 +90,69 @@
 
 //     ptr=strtok(NULL,"/"); // no '/', then will print base elemnt at that address
 //     printf("%s\n",ptr); // in buf --> kumar.yadav
- 
+
 //     // ptr=strtok(NULL,"/");  /*seg fault */
 //     // printf("%s\n",ptr);
 
 //     // printf("%s\n",strtok(NULL,"/")); /*seg fault */
 
-// } 
-
+// }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main()
+// {
+
+//     char *ptr, val[30];
+//     char str[100] = "VerAg:05.07.03.00.00;VerHw:ppc;VerSw:11.00.90.00.00;VerPl:MXe;VerMCD:9.3, 20.3.0.41";
+//     ptr = strstr(str, "VerSw");
+//     printf("%s\n", ptr);
+//     ptr = strtok(ptr, ";");
+//     printf("%s\n", ptr);
+//     ptr = strchr(ptr, ':');
+//     printf("%s\n", ptr + 1);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main()
+// {
+//     char str[100] = "fan0:stop";
+//     char *ptr1, *ptr2, *ptr3;
+
+//     ptr1 = strchr(str, ':');
+//     printf("%s\n", ptr1);
+
+//     ptr2 = strstr(str, ":");
+//     printf("%s\n", ptr2);
+
+//     ptr3 = strtok(str, ":");
+//     printf("%s\n", ptr3);
+// }
+
+//++++++++++++++++++++++++++++++++++++++
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+int main()
+{
+    char str[100] = "fan0:stop";
+    char *ptr;
+    if (strstr(str, "stop") != NULL)
+    {
+        ptr = strchr(str, ':');
+        printf("%s\n", ptr + 1);
+    }
+    // ptr = strstr(str, ":");
+    // printf("%s\n",ptr);
+}

@@ -4,12 +4,12 @@
 // int main()
 // {
 //     char *p;
-//     strcpy(p,"avind");
+//     //char *p=malloc(sizeof(char));  //--soln
+//     strcpy(p,"arvind");
 //     printf("%s\n", p);
 // }
 
 //++++++++++++++++++++++++++++++++++=
-
 
 // #include <stdlib.h>
 // #include <stdio.h>
@@ -30,19 +30,19 @@
 // #include <string.h>
 // void getName(char *ptr)
 // {
-//     char *str; //seg fault 
-//     strncpy(str,ptr,strlen(ptr)); // avoid strncpy copy into a pointer, to:no , from:yes
-//     printf("ptr:%s\n",str);
+//     // char str[20]; // seg fault
+//     char *str;
+//     strncpy(str, ptr, strlen(ptr)); // avoid strncpy copy into a pointer, to:no , from:yes
+//     printf("ptr:%s\n", str);
 
-//     printf("%s\n",ptr);
+//     printf("%s\n", ptr);
 // }
 // int main()
 // {
-//     char name[30]="arvind kumar";
+//     char name[30] = "arvind kumar";
 //     getName(name);
 // }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 
 // #include <stdlib.h>
 // #include <stdio.h>
@@ -60,10 +60,21 @@
 //     *(ptr)='x';
 //     printf("%c\n",*(ptr));
 
-
-
-    // *ptr='x';  // seg fault cz you are changing the read only memory
-    // printf("%s\n",ptr);
+// *ptr='x';  // seg fault cz you are changing the read only memory
+// printf("%s\n",ptr);
 
 // }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main(){
+//     // char *p="arvind";
+//     char *p;
+//     strcpy(p,"arvind");
+//     printf("%s\n",p);
+//     *(p)='x';
+//     printf("%s\n",p);
+// }
