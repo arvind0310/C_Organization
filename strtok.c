@@ -15,6 +15,7 @@
 //     printf("baseIP:%s\n", baseIP);
 //     printf("mask:%d\n", mask);
 // }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdlib.h>
 // #include <stdio.h>
@@ -140,19 +141,33 @@
 
 //++++++++++++++++++++++++++++++++++++++
 
-#include <stdlib.h>
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main()
+// {
+//     char str[100] = "fan0:stop";
+//     char *ptr;
+//     if (strstr(str, "stop") != NULL)
+//     {
+//         ptr = strchr(str, ':');
+//         printf("%s\n", ptr + 1);
+//     }
+//     // ptr = strstr(str, ":");
+//     // printf("%s\n",ptr);
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 int main()
 {
-    char str[100] = "fan0:stop";
+    char str[100] = "stop";
     char *ptr;
-    if (strstr(str, "stop") != NULL)
-    {
-        ptr = strchr(str, ':');
-        printf("%s\n", ptr + 1);
-    }
-    // ptr = strstr(str, ":");
-    // printf("%s\n",ptr);
+    ptr = strtok(str,":");
+    printf("%s\n",ptr);
+
 }

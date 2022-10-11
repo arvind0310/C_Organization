@@ -361,31 +361,31 @@ int main()
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-  int x = 2147483647;
-  long int y = 9223372036854775807;	//2147483651;
-  unsigned long z = 	18446744073709551615; //4294967296;
-  long long int a = 9223372036854775807;
+// int main()
+// {
+//   int x = 2147483647;
+//   long int y = 9223372036854775807;	//2147483651;
+//   unsigned long z = 	18446744073709551615; //4294967296;
+//   long long int a = 9223372036854775807;
 
-  // printf("%ld\n",sizeof(x));
-  // printf("%d\n",x); // for signed int
-  // printf("%u\n",x); // for unsigned int
-  printf("%ld\n", sizeof(x));
-  printf("%d\n", x);
+//   // printf("%ld\n",sizeof(x));
+//   // printf("%d\n",x); // for signed int
+//   // printf("%u\n",x); // for unsigned int
+//   printf("%ld\n", sizeof(x));
+//   printf("%d\n", x);
 
-  printf("%ld\n", sizeof(y));
-  printf("%ld\n", y);
+//   printf("%ld\n", sizeof(y));
+//   printf("%ld\n", y);
 
-  printf("%ld\n", sizeof(z));
-  printf("%lu\n", z);
+//   printf("%ld\n", sizeof(z));
+//   printf("%lu\n", z);
 
-  printf("%ld\n", sizeof(z));
-  printf("%lld\n", a);
-  return 0;
-}
+//   printf("%ld\n", sizeof(z));
+//   printf("%lld\n", a);
+//   return 0;
+// }
 
 
 //++++++++++++++++++++++++++++++++++++++++++++++

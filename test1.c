@@ -494,26 +494,158 @@ int getChildProcessCount()
 // }
 
 //+++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    int x = 6;
+//    if (x > 8)
+//    {
+//       printf(">2\n");
+//    }
+//    else if (x > 3)
+//    {
+//       printf(">3\n");
+//    }
+//    else if (x>9)
+//    {
+//       printf("x>4\n");
+//    }
+//    else
+//    {
+//       printf("bye\n");
+//    }
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main(void)
+// {
+//    char str[10] = "arvind";
+//    char *title = NULL;
+//    title = str;
+//    printf("%s\n", title);
+//    printf("%c\n", *title);
+//    printf("%c\n", *(title + 1));
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main(void)
+// {
+//    char *title = "arvind";
+//    printf("%s\n", title);
+//    printf("%c\n", *title);
+//    printf("%c\n", *(title + 1));
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main(void)
+// {
+//    char *title;
+//    strcpy(title,"arvind");
+//    printf("%s\n", title);
+// printf("%c\n", *title);
+// printf("%c\n", *(title + 1));
+// }
+
+//++++++++++++++++++++++++++++++++++++++++
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     char str[80] = "a.,b.c.d.e.f";
+//     // char c[2] =".";
+//     char *token;
+//     token = strtok(str, ".");
+//     while (token != NULL)
+//     {
+//         printf(" %s\n", token);
+//         token = strtok(NULL, ".");
+//         printf("%s\n",token);
+//     }
+
+//     return (0);
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//    char name[100] = "arvind yadav";
+//    printf("string name:%s\n", name);
+
+//    char *temp;
+//    strcpy(temp, name);
+//    printf("string name:%s and temp:%s\n", name, temp);
+//    printf("name:%s\n", strtok(temp, " "));
+//    printf("res:%s\n", name);
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//    char *name = "NetBotz450";
+//    if (strstr(name,"NetBotz450"))
+//    {
+//       printf("hiii\n");
+//    }
+//    else
+//    {
+//       printf("bye\n");
+//    }
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++
+// #include <stdio.h>
+// #include <stdint.h>
+// // #include <inttypes.h>
+// int main()
+// {
+//    uint64_t my_int = 99;
+//    printf("%ld\n", my_int);
+//    // printf("%" PRIu64 "\n", my_int);
+// }
+
+//+++++++++++++++++++++++++++++++++++
+// #include <stdio.h>
+// #include <stdint.h>
+// #include <stdbool.h>
+// int main()
+// {
+//    bool val = true;
+//    short int my_int = 99;
+//    printf("%hi\n", my_int);
+//    printf("%d\n",val);
+
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdint.h>
+#include <stdbool.h>
 int main()
 {
-   int x = 6;
-   if (x > 8)
-   {
-      printf(">2\n");
-   }
-   else if (x > 3)
-   {
-      printf(">3\n");
-   }
-   else if (x>9)
-   {
-      printf("x>4\n");
-   }
-   else
-   {
-      printf("bye\n");
-   }
+   int val = -1;
+   printf("%d\n", val);
 }

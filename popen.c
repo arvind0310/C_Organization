@@ -28,25 +28,25 @@
 
 //   BASIC
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
 
-int main()
-{
-    char value[100] = {0};
-    FILE *fp = NULL;
-    fp = fopen("sample.txt", "r");
-    // now it will point to each litrall without spaces at once
-    // like 1st: arvind , 2nd: kumar ....
-    fscanf(fp, "%s", value);
-    printf("data = [%s]\n", value);
-    fscanf(fp, "%s", value);
-    printf("data = [%s]\n", value);
-    fscanf(fp, "%s", value);
-    printf("data = [%s]\n", value);
-    fscanf(fp, "%s", value);
-}
+// int main()
+// {
+//     char value[100] = {0};
+//     FILE *fp = NULL;
+//     fp = fopen("sample.txt", "r");
+//     // now it will point to each litrall without spaces at once
+//     // like 1st: arvind , 2nd: kumar ....
+//     fscanf(fp, "%s", value);
+//     printf("data = [%s]\n", value);
+//     fscanf(fp, "%s", value);
+//     printf("data = [%s]\n", value);
+//     fscanf(fp, "%s", value);
+//     printf("data = [%s]\n", value);
+//     fscanf(fp, "%s", value);
+// }
 
 /* BASIC METHOD2:
 #include <stdio.h>
@@ -199,6 +199,7 @@ int main()
 //     char cmd[50];
 //     strcpy(cmd,"ls");
 //     executeShellCmd(cmd);
+//     // system(cmd);
 // }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++

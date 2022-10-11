@@ -1,24 +1,28 @@
 
-#include <stdio.h>
-#include <unistd.h>
-#include <pthread.h>
 
-void myTurn(void *arg) //>> void type pointer is passed   // or void* myTurn()
-{
-    for (int i = 0; i < 5; i++)
-    {
-        printf("thread calling  %d\n", i);
-    }
-}
+/* formatt of compilin - gcc thread_mutex.c -pthread */
 
-int main()
-{
 
-    pthread_t newthread;
-    pthread_create(&newthread, NULL, (void*)myTurn, NULL);
-    pthread_join(newthread, NULL); // wait till thread is finshed other wise main will end before thread is completed
-    return 0;
-}
+// #include <stdio.h>
+// #include <unistd.h>
+// #include <pthread.h>
+
+// void myTurn(void *arg) //>> void type pointer is passed   // or void* myTurn()
+// {
+//     for (int i = 0; i < 5; i++)
+//     {
+//         printf("thread calling  %d\n", i);
+//     }
+// }
+// int main()
+// {
+
+//     pthread_t newthread;
+//     pthread_create(&newthread, NULL, (void *)myTurn, NULL);
+//     pthread_join(newthread, NULL); // wait till thread is finshed other wise main will end before thread is completed
+//     printf("hii this string\n");
+//     return 0;
+// }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -57,7 +61,7 @@ int main()
 //     pthread_join(newthread1, NULL); // wait untill it finsih execution
 //     pthread_join(newthread2, NULL); // wait untill it finsih execution
 
-// // here both threads are diff and calling diff fun parllely
+//     // here both threads are diff and calling diff fun parllely
 //     return 0;
 // }
 
@@ -257,4 +261,3 @@ int main()
 //     }
 //     printf("%d\n",sum);
 // }
-

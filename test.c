@@ -167,7 +167,7 @@ call from another thread. */
 //         "chandu yadav",
 //     };
 
-//    if(strstr(name[1],"kumar")==NULL)
+//    if(strstr(name[1],"kumar")==NULL) // if(strstr(name[1],"yadav")
 //    {
 //        printf("true\n");
 //    }
@@ -185,7 +185,7 @@ call from another thread. */
 //     printf ("%d",x);
 // }
 
-//+++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdio.h>
 // #include <stdlib.h>

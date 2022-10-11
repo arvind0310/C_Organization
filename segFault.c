@@ -50,19 +50,20 @@
 // #include <unistd.h>
 // int main()
 // {
-//     //char ptr[10]="arvind";
-//     char *ptr="arvind";
-//     printf("%s\n",ptr);
-//     printf("%p\n",ptr);
-//     printf("%c\n",*(ptr));
+//     // char ptr[10]="arvind";
+//     char *ptr = "arvind";
+//     printf("%s\n", ptr);
+//     printf("%p\n", ptr);
+//     printf("%c\n", *(ptr));
 //     (ptr++);
-//     printf("%c\n",*(ptr));
-//     *(ptr)='x';
-//     printf("%c\n",*(ptr));
+//     printf("%p\n", ptr);
 
-// *ptr='x';  // seg fault cz you are changing the read only memory
-// printf("%s\n",ptr);
+//     printf("%c\n", *(ptr));
+//     *(ptr) = 'x';
+//     printf("%c\n", *(ptr));
 
+//     // *ptr='x';  // seg fault cz you are changing the read only memory
+//     // printf("%s\n",ptr);
 // }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -70,11 +71,14 @@
 // #include <stdio.h>
 // #include <string.h>
 // #include <unistd.h>
-// int main(){
+// int main()
+// {
 //     // char *p="arvind";
 //     char *p;
-//     strcpy(p,"arvind");
-//     printf("%s\n",p);
-//     *(p)='x';
-//     printf("%s\n",p);
+//     strcpy(p, "arvind"); // here we are wrting to uninitialized pointer
+//     printf("%s\n", p);
+//     *(p) = 'x';
+//     printf("%s\n", p);
 // }
+
+//++++++++++++++++++++++++++++++++++++++
