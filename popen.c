@@ -10,12 +10,12 @@
 
    # while (fscanf(fp, "%s", value) != EOF)
     if (fgets(value, 100, fp) != NULL)
-    
-    
+
+
    # while((fscanf(fp,"%s",value))!=-1)
     if (fgets(value, 100, fp) != NULL)
 
-    
+
           #    fp = popen(cmd_scanID,"r"); // when there is single o/p from command
                 if(fp == NULL)
                      return;
@@ -26,31 +26,27 @@
 
   */
 
+//   BASIC
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
 
- /*      BASIC
- #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-int main()
-{
-    char value[100] = {0};
-    FILE *fp = NULL;
-    fp = fopen("sample.txt", "r");
-    // now it will point to each litrall without spaces at once 
-    // like 1st: arvind , 2nd: kumar .... 
-    fscanf(fp, "%s", value);
-    printf("data = [%s]\n", value);
-    fscanf(fp, "%s", value);
-    printf("data = [%s]\n", value);
-    fscanf(fp, "%s", value);
-    printf("data = [%s]\n", value);
-}
-*/
-
-
-
+// int main()
+// {
+//     char value[100] = {0};
+//     FILE *fp = NULL;
+//     fp = fopen("sample.txt", "r");
+//     // now it will point to each litrall without spaces at once
+//     // like 1st: arvind , 2nd: kumar ....
+//     fscanf(fp, "%s", value);
+//     printf("data = [%s]\n", value);
+//     fscanf(fp, "%s", value);
+//     printf("data = [%s]\n", value);
+//     fscanf(fp, "%s", value);
+//     printf("data = [%s]\n", value);
+//     fscanf(fp, "%s", value);
+// }
 
 /* BASIC METHOD2:
 #include <stdio.h>
@@ -72,12 +68,6 @@ int main()
     }
 }
 */
-
-
-
-
-
-
 
 /*program 1:
 
@@ -209,6 +199,7 @@ int main()
 //     char cmd[50];
 //     strcpy(cmd,"ls");
 //     executeShellCmd(cmd);
+//     // system(cmd);
 // }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -371,5 +362,3 @@ int main()
 //    fclose (fp);
 //    return 0;
 // }
-
-

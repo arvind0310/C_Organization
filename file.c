@@ -207,33 +207,115 @@
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// #include <stdio.h>
+// #include <unistd.h>
+// #include <sys/types.h>
+// #include <stdlib.h>
+// #include <string.h>
+
+// int createProcess()
+// {
+//     int i = 0;
+//     pid_t pid;
+//     FILE *fp;
+//     fp = fopen("/tmp/id.txt", "w");
+//     putw(0, fp);
+//     fclose(fp);
+//     for (; i < 5; i++)
+//     {
+//         fp = fopen("/tmp/id.txt", "r");
+//         printf("fp->%d\n", getw(fp));
+//         rewind(fp);
+//         while (getw(fp) > 2)
+//         {
+//             printf(" >> 2\n");
+//             sleep(3);
+//             fclose(fp);
+//             fp = fopen("/tmp/id.txt", "r");
+//         }
+//         fclose(fp);
+//         pid = fork();
+//         if (pid < 0)
+//         {
+//             printf("error");
+//         }
+//         else if (pid == 0)
+//         {
+//             printf("child %d havind id : %d\n", i + 1, getpid());
+//             fp = fopen("/tmp/id.txt", "r+");
+//             int val = getw(fp);
+//             val++;
+//             printf("val:%d\n", val);
+//             rewind(fp);
+//             putw(val, fp);
+//             fclose(fp);
+//             sleep(3);
+//             goto print;
+//         }
+//         else
+//         {
+//             printf("parent havind id : %d\n", getpid());
+//             sleep(3);
+//         }
+//     }
+//     fp = fopen("/tmp/id.txt", "r");
+//     while (getw(fp) > 0)
+//     {
+//         sleep(3);
+//         fclose(fp);
+//         fp = fopen("/tmp/id.txt", "r");
+//     }
+//     fclose(fp);
+//     printf("return from main thread\n");
+//     return 0;
+// print:
+//     printf("end for child process - %d\n", getpid());
+//     fp = fopen("/tmp/id.txt", "r+");
+//     int val = getw(fp);
+//     val--;
+//     printf("val2:%d\n", val);
+//     rewind(fp);
+//     putw(val, fp);
+//     fclose(fp);
+//     printf("++++++++++++++++++++\n");
+//     sleep(2);
+//     exit(0);
+// }
+
+// int main()
+// {
+//     createProcess();
+//     printf("BYE\n");
+//     return 0;
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++
 
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <stdlib.h>
 #include <string.h>
+int count=0;
+void wait();
+int createProcess();
 
+void wait()
+{
+    sleep(5);
+}
 int createProcess()
 {
+
     int i = 0;
     pid_t pid;
-    FILE *fp;
-    fp = fopen("/tmp/id.txt", "w");
-    putw(0, fp);
-    fclose(fp);
     for (; i < 5; i++)
     {
-        fp = fopen("/tmp/id.txt", "r");
-        printf("fp-->%d",getw(fp));
-        while (getw(fp) > 2)
+        while ((count) > 2)
         {
             printf(" >> 2\n");
             sleep(3);
-            fclose(fp);
-            fp = fopen("/tmp/id.txt", "r");
         }
-        fclose(fp);
         pid = fork();
         if (pid < 0)
         {
@@ -241,41 +323,32 @@ int createProcess()
         }
         else if (pid == 0)
         {
-            printf("child %d havind id : %d\n", i+1,getpid());
-            fp = fopen("/tmp/id.txt", "r");
-            int val = getw(fp);
-            val++;
-            fclose(fp);
-            fp = fopen("/tmp/id.txt", "w");
-            putw(val, fp);
-            fclose(fp);
-            sleep(10);
+            printf("child:%d ID:%d\n", i + 1, getpid());
+            printf("val:%d\n", count);
+            (count)++;
+            printf("val+:%d\n", count);
+            (count)++;
+            printf("val+:%d\n", count);
+            wait();
             goto print;
         }
         else
         {
-            printf("parent havind id : %d\n", getpid());
+            printf("parent havind id : %d\n", pid);
             sleep(3);
         }
     }
-    fp = fopen("/tmp/id.txt", "r");
-    while (getw(fp) > 0)
+    while ((count) > 0)
     {
         sleep(3);
-        fclose(fp);
-        fp = fopen("/tmp/id.txt", "r");
     }
-    fclose(fp);
+    printf("return from main thread\n");
     return 0;
 print:
     printf("end for child process - %d\n", getpid());
-    fp = fopen("/tmp/id.txt", "r");
-    int val = getw(fp);
-    val--;
-    fclose(fp);
-    fp = fopen("/tmp/id.txt", "w");
-    putw(val, fp);
-    fclose(fp);
+    printf("val:%d\n", count);
+    (count)--;
+    printf("val-:%d\n", count);
     printf("++++++++++++++++++++\n");
     sleep(2);
     exit(0);
@@ -283,7 +356,14 @@ print:
 
 int main()
 {
-    createProcess();
+    char str[10];
+    do
+    {
+        printf("*********\n");
+        createProcess();
+        printf("/////////");
+        scanf("%s", str);
+    } while (str != "exit");
     printf("BYE\n");
     return 0;
 }

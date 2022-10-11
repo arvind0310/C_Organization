@@ -322,84 +322,330 @@ int getChildProcessCount()
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// #include <unistd.h>
+// #include <sys/wait.h>
+// #include <signal.h>
+
+// volatile sig_atomic_t shutdown_flag = 1;
+
+// void cleanupRoutine(int signal_number)
+// {
+//    shutdown_flag = 0;
+// }
+
+// int main(void)
+// {
+//    int wstatus;
+//    for (int i = 0; i < 5; i++)
+//    {
+//       pid_t c_pid = fork();
+//       if (c_pid == -1)
+//       {
+//          perror("fork");
+//          exit(EXIT_FAILURE);
+//       }
+
+//       if (c_pid == 0)
+//       {
+//          printf("printed from child process - %d\n", getpid());
+
+//          int count = 0;
+
+//          struct sigaction sigterm_action;
+//          memset(&sigterm_action, 0, sizeof(sigterm_action));
+//          sigterm_action.sa_handler = &cleanupRoutine;
+//          sigterm_action.sa_flags = 0;
+
+//          // Mask other signals from interrupting SIGTERM handler
+//          if (sigfillset(&sigterm_action.sa_mask) != 0)
+//          {
+//             perror("sigfillset");
+//             exit(EXIT_FAILURE);
+//          }
+//          // Register SIGTERM handler
+//          if (sigaction(SIGTERM, &sigterm_action, NULL) != 0)
+//          {
+//             perror("sigaction SIGTERM");
+//             exit(EXIT_FAILURE);
+//          }
+
+//          while (shutdown_flag)
+//          {
+//             count += 1;
+//          }
+//          printf("count = %d\n", count);
+
+//          exit(EXIT_SUCCESS);
+//       }
+//       else
+//       {
+//          printf("printed from parent process - %d\n", getpid());
+//          int ret;
+
+//          sleep(15);
+
+//          ret = kill(c_pid, SIGKILL);
+//          if (ret == -1)
+//          {
+//             perror("kill");
+//             exit(EXIT_FAILURE);
+//          }
+
+//          if (waitpid(c_pid, &wstatus, WUNTRACED | WCONTINUED) == -1)
+//          {
+//             perror("waitpid");
+//             exit(EXIT_FAILURE);
+//          }
+//       }
+//    }
+//    exit(EXIT_SUCCESS);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
+// int main()
+// {
+//    int val=1222222222222;
+//    printf("%lu\n",sizeof(val));
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++=
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
+// int main()
+// {
+//    int x = 5;
+//    if (x > 4)
+//    {
+//       printf("1\n");
+//    }
+//    else if (x == 5)
+//    {
+//       printf("2\n");
+//    }
+//    else
+//    {
+//       printf("3\n");
+//    }
+// }
+
+//+++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char i;
+//    for (i = 0; i < 129; i++) // after 127 it will go -128,-127 ...
+//    {
+//       printf("%d\n",i);
+//    }
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char res[100];
+//    char name[20] = "arvind age is:";
+//    int age = 23;
+//    char school[20] = "and study in";
+//    int grade = 10;
+//    sprintf(res, "%s %d %s %d", name, age, school, grade);
+//    printf("%s\n",res);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char val[15] = "1";
+//    char name[10];
+//    sprintf(name,"TempSensor-%d",atoi(val));
+//    printf("%s\n",name);
+// }
+
+//++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    char *str = "arvind";
+//    printf("%c\n",*str);
+
+//    printf("hello\n"+3);
+// }
+
+//+++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//    int x = 6;
+//    if (x > 8)
+//    {
+//       printf(">2\n");
+//    }
+//    else if (x > 3)
+//    {
+//       printf(">3\n");
+//    }
+//    else if (x>9)
+//    {
+//       printf("x>4\n");
+//    }
+//    else
+//    {
+//       printf("bye\n");
+//    }
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main(void)
+// {
+//    char str[10] = "arvind";
+//    char *title = NULL;
+//    title = str;
+//    printf("%s\n", title);
+//    printf("%c\n", *title);
+//    printf("%c\n", *(title + 1));
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main(void)
+// {
+//    char *title = "arvind";
+//    printf("%s\n", title);
+//    printf("%c\n", *title);
+//    printf("%c\n", *(title + 1));
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main(void)
+// {
+//    char *title;
+//    strcpy(title,"arvind");
+//    printf("%s\n", title);
+// printf("%c\n", *title);
+// printf("%c\n", *(title + 1));
+// }
+
+//++++++++++++++++++++++++++++++++++++++++
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     char str[80] = "a.,b.c.d.e.f";
+//     // char c[2] =".";
+//     char *token;
+//     token = strtok(str, ".");
+//     while (token != NULL)
+//     {
+//         printf(" %s\n", token);
+//         token = strtok(NULL, ".");
+//         printf("%s\n",token);
+//     }
+
+//     return (0);
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//    char name[100] = "arvind yadav";
+//    printf("string name:%s\n", name);
+
+//    char *temp;
+//    strcpy(temp, name);
+//    printf("string name:%s and temp:%s\n", name, temp);
+//    printf("name:%s\n", strtok(temp, " "));
+//    printf("res:%s\n", name);
+// }
+
+//++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//    char *name = "NetBotz450";
+//    if (strstr(name,"NetBotz450"))
+//    {
+//       printf("hiii\n");
+//    }
+//    else
+//    {
+//       printf("bye\n");
+//    }
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++
+// #include <stdio.h>
+// #include <stdint.h>
+// // #include <inttypes.h>
+// int main()
+// {
+//    uint64_t my_int = 99;
+//    printf("%ld\n", my_int);
+//    // printf("%" PRIu64 "\n", my_int);
+// }
+
+//+++++++++++++++++++++++++++++++++++
+// #include <stdio.h>
+// #include <stdint.h>
+// #include <stdbool.h>
+// int main()
+// {
+//    bool val = true;
+//    short int my_int = 99;
+//    printf("%hi\n", my_int);
+//    printf("%d\n",val);
+
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/wait.h>
-#include <signal.h>
-
-volatile sig_atomic_t shutdown_flag = 1;
-
-void cleanupRoutine(int signal_number)
+#include <stdint.h>
+#include <stdbool.h>
+int main()
 {
-   shutdown_flag = 0;
-}
-
-int main(void)
-{
-   int wstatus;
-   for (int i = 0; i < 5; i++)
-   {
-      pid_t c_pid = fork();
-      if (c_pid == -1)
-      {
-         perror("fork");
-         exit(EXIT_FAILURE);
-      }
-
-      if (c_pid == 0)
-      {
-         printf("printed from child process - %d\n", getpid());
-
-         int count = 0;
-
-         struct sigaction sigterm_action;
-         memset(&sigterm_action, 0, sizeof(sigterm_action));
-         sigterm_action.sa_handler = &cleanupRoutine;
-         sigterm_action.sa_flags = 0;
-
-         // Mask other signals from interrupting SIGTERM handler
-         if (sigfillset(&sigterm_action.sa_mask) != 0)
-         {
-            perror("sigfillset");
-            exit(EXIT_FAILURE);
-         }
-         // Register SIGTERM handler
-         if (sigaction(SIGTERM, &sigterm_action, NULL) != 0)
-         {
-            perror("sigaction SIGTERM");
-            exit(EXIT_FAILURE);
-         }
-
-         while (shutdown_flag)
-         {
-            count += 1;
-         }
-         printf("count = %d\n", count);
-
-         exit(EXIT_SUCCESS);
-      }
-      else
-      {
-         printf("printed from parent process - %d\n", getpid());
-         int ret;
-
-         sleep(15);
-
-         ret = kill(c_pid, SIGKILL);
-         if (ret == -1)
-         {
-            perror("kill");
-            exit(EXIT_FAILURE);
-         }
-
-         if (waitpid(c_pid, &wstatus, WUNTRACED | WCONTINUED) == -1)
-         {
-            perror("waitpid");
-            exit(EXIT_FAILURE);
-         }
-      }
-   }
-   exit(EXIT_SUCCESS);
+   int val = -1;
+   printf("%d\n", val);
 }

@@ -30,13 +30,13 @@
 // {
 //     char output[50] = "arvind=kumar=yadav";
 //     char scanID[30];
-//     char *ptr = strchr(output, '=');
-//     printf("%s\n", ptr);
+//     char *ptr = strchr(output, '='); 
+//     printf("%s\n", ptr); //=kumar=yadav
 
 //     if (ptr == NULL)
 //         return 0;
-//     ptr++;
-//     printf("%s\n", *ptr);
+//     ptr++; //k...
+//     printf("%c\n", *ptr); //k
 //     strcpy(scanID, ptr);
 //     scanID[strlen(scanID) - 1] = '\0';
 //     printf("%s\n", scanID);

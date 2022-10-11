@@ -1,20 +1,20 @@
-// #include <stdlib.h>
-// #include <stdio.h>
-// #include <string.h>
-// #include <unistd.h>
-// void fun(char *ptr)
-// {
-//     printf("%s\n",ptr);
-
-//     printf("%c\n",*ptr); 
-//     *(ptr+1)='x';
-//     printf("%s\n",ptr);
-// }
-// int main()
-// {
-//     char str[10]="arvind";
-//     fun(str);
-// }
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+void fun(char *ptr)
+{
+    printf("length:%ld\n",strlen(ptr));
+    printf("%s\n",ptr);
+    printf("%c\n",*ptr); 
+    *(ptr+1)='x';
+    printf("%s\n",ptr);
+}
+int main()
+{
+    char str[100]="arvindtttttt";
+    fun(str);
+}
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

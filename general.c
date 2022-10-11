@@ -186,7 +186,6 @@ int main()
 //     printf("%s\n", ptr);
 // }
 
-
 //+++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdlib.h>
@@ -210,7 +209,7 @@ int main()
 // #include <stdio.h>
 // #include<string.h>
 // #include <stdlib.h>
-// // void main(int argc, char **argv) 
+// // void main(int argc, char **argv)
 // void main(int argc, char *argv[])
 // {
 //         printf("command line arg : %s\n", argv[0]);
@@ -225,9 +224,22 @@ int main()
 
 // int main()
 // {
-//     long long int value; // max --> 4294967295
-//     value = atoll("92233720368547758");
-//     printf("%lld",value);
+//     long long int value; // max of long long int 9223372036854775807
+
+//     value = atoll("9223372036854775808");
+//     printf("%lld\n",value);
+//     printf("%ld\n",sizeof(value)); // 8 byte
+
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++
+// int main()
+// {
+//     long int value; // max of long long int 9223372036854775807
+
+//     value = atol("9223372036854775808");
+//     printf("%ld\n",value);
+//     printf("%ld\n",sizeof(value)); //8 byte
 
 // }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -254,8 +266,6 @@ int main()
 
 //+++++++++++++++++++++++++++++++++++++++++++++
 
-
-
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <unistd.h>
@@ -278,6 +288,7 @@ int main()
 //   printf("%d\n",b);
 
 // }
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // #include <stdio.h>
 
@@ -355,8 +366,10 @@ int main()
 // int main()
 // {
 //   int x = 2147483647;
-//   long int y = 9223372036854775808;
-//   unsigned long z = 4294967296;
+//   long int y = 9223372036854775807;	//2147483651;
+//   unsigned long z = 	18446744073709551615; //4294967296;
+//   long long int a = 9223372036854775807;
+
 //   // printf("%ld\n",sizeof(x));
 //   // printf("%d\n",x); // for signed int
 //   // printf("%u\n",x); // for unsigned int
@@ -369,8 +382,11 @@ int main()
 //   printf("%ld\n", sizeof(z));
 //   printf("%lu\n", z);
 
+//   printf("%ld\n", sizeof(z));
+//   printf("%lld\n", a);
 //   return 0;
 // }
+
 
 //++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -384,7 +400,7 @@ int main()
 
 // int main()
 // {
-//     int n = base(1); // now base has returned value 38 
+//     int n = base(1); // now base has returned value 38
 //     printf("Base(1) is %d\n", n); // printing return value
 //     return n + 3; // will return 41 but you need to print if u want to see the o/p.
 // }
@@ -397,7 +413,7 @@ int main()
 //     // return 2;
 //     printf("hii\n");
 //     return 0;
-    
+
 // }
 // int main()
 // {

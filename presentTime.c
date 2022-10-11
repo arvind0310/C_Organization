@@ -34,34 +34,37 @@
 // }
 
 /* char *ctime(const time_t *timer) return string pointer */
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// #include<stdio.h>
-// #include<time.h>
+//++++++++++++++++++++++++++++++ good ++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <time.h>
 
 // int main()
 // {
-//     time_t t=time(NULL);  // not a primitive datatype
+//     time_t t = time(NULL); // not a primitive datatype
+//     printf("\nTime Stamp:%ld", t);
+
 //     printf("\nThis program has been writeen at (date and time): %s", ctime(&t));
 //     return 0;
 // }
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++
 
 // #include <time.h>
 // #include <stdio.h>
 // #include <string.h>
-
 // int main(void)
 // {
-//     time_t mytime = time(NULL);   // mytime -> long int type cz of time_t
-/* long unsigned mytime=time(NULL); */
+//     time_t mytime = time(NULL); // mytime -> long int type cz of time_t
+//     /* long unsigned mytime=time(NULL); */
 
-//     char * time_str = ctime(&mytime);
-//     time_str[strlen(time_str)-1] = '\0';
+//     char *time_str = ctime(&mytime); // ctime return char pointer
 //     printf("Current Time : %s\n", time_str);
 
+//     time_str[strlen(time_str) - 1] = '\0';
+//     printf("Current Time : %s\n", time_str);
 // }
-
 
 // //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // #include <stdio.h>
@@ -78,8 +81,6 @@
 //     int x = 3;
 //     fun(x, time(NULL));
 // }
-
-
 
 // //++++++++++++++++++++++++++++++++++++++++++++
 // #include <stdio.h>
