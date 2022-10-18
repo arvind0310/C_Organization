@@ -33,8 +33,8 @@
 // {
 //     char name[20] = "arvind";
 //     char *p;
-//     p = strstr(name, "y");
-//     p = strstr(name, "i");
+//     // p = strstr(name, "y");
+//     p = strstr(name, "i"); // pointer strated from letter i onwords.
 
 //     if (p)
 //         printf("%s\n", p);
@@ -59,7 +59,7 @@
 //     // ptr2 = strstr(str, ":");
 //     // ptr2 = strstr(str, "an0");
 //     // ptr2 = strstr(str, ":st"); // show from first occ (:s..) // will show from second arg passed if avalable
-//     ptr2 = strstr(str, "ar"); // if not found then return NULL -- if print NULL -> seg fault
+//     ptr2 = strstr(str, "an"); // if not found then return NULL -- if print NULL -> seg fault
 //     /* soln to escape from seg fault if no string stringa available in ptr */
 //     if (ptr2)
 //         printf("%s\n", ptr2);
@@ -83,17 +83,15 @@
 // }
 
 //++++++++++++++++++++++++++++++++++++++++
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-int main(void)
-{
-    char *title = NULL;
-    strcpy(title, "arvind");
-    printf("%s\n", title);
-}
-
-
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main(void)
+// {
+//     char *title = NULL;
+//     strcpy(title, "arvind");
+//     printf("%s\n", title);
+// }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 // #include<stdlib.h>

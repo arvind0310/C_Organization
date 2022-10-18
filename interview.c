@@ -1,4 +1,8 @@
 
+
+// ask about ascii values -> refer ascii.c
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <string.h>
@@ -47,7 +51,7 @@
 // #include <stdio.h>
 // #include<string.h>
 // #include <stdlib.h>
-// // void main(int argc, char **argv) 
+// // void main(int argc, char **argv)
 // void main(int argc, char *argv[])
 // {
 //         printf("command line arg : %s\n", argv[0]);
@@ -58,9 +62,7 @@
 
 // }
 
-
 //++++++++++++++++++++++++++ seg fault +++++++++++++++++++++++++++++++++++
-
 
 // #include <stdlib.h>
 // #include <stdio.h>
@@ -99,7 +101,7 @@
 // {
 //     int age;
 //     char name[10];
-//     int class; 
+//     int class;
 // };
 
 // void getData(struct student *arvind)
@@ -196,7 +198,3 @@
 //     strcpy(cmd, "ls");
 //     executeShellCmd(cmd);
 // }
-
-
-
-

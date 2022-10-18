@@ -296,7 +296,7 @@
 #include <sys/types.h>
 #include <stdlib.h>
 #include <string.h>
-int count=0;
+int count = 0;
 void wait();
 int createProcess();
 

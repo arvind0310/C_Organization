@@ -194,16 +194,77 @@
 
 //++++++++++++++++++++++++++++++++++++++
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     int x = 5;
+//     if (x > 1)
+//         printf(">1\n");
+//     else
+//         printf(">5\n");
+// }
+
+// +++++++++++++++++moved to ascii.c +++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     char ch[3] = '10';
+//     int num = ch - '0';
+//     printf("num:%d\n %d*10 = %d\n", num, num, num * 10);
+// }
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// int main()
+// {
+//     int k;                         // variable declaration
+//     for (int k = 0; k <= 255; k++) // for loop from 0-255
+//     {
+//         printf("\nThe ascii value of %c is %d", k, k);
+//     }
+//     return 0;
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+
+// int main()
+// {
+//     char metric[] = "yadav";
+//     int value = 2;
+//     if ((strcmp(metric, "arvind") == 0 || strcmp(metric, "yadav") == 0) && value > 1)
+//         printf("true\n");
+//     else
+//         printf("bye\n");
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+typedef struct studentDetails
+{
+    // char name[20];
+    // int id;
+    char a; // 1 byte
+    int c;  // 4 bytes
+
+    char b; // 1 byte
+
+} student_t;
 int main()
 {
-    int x = 5;
-    if (x > 1)
-        printf(">1\n");
-    else
-        printf(">5\n");
+    student_t student;
+    printf("%ld\n", sizeof(student_t));
+    return 0;
 }
-
-

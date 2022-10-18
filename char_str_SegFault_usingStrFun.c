@@ -37,18 +37,19 @@
 // int main()
 // {
 
-//     char str[]="kumar";
-//     printf("%s\n",str);
-//     printf("%c\n",str[0]);
+//     char str[] = "kumar";
+//     printf("%s\n", str);
+//     printf("%c\n", str[0]);
 
-//     *(str)='x';
-//     printf("%s\n",str);
+//     *(str) = 'x'; // str[0] = 'x';
+//     printf("%s\n", str);
 
-//     *(str+1)='\0'; // from this this everything null
-//     printf("null at 1: %s\n",str);
+//     *(str + 1) = '\0'; // from this this everything null
+//     printf("null at 1: %s\n", str);
 
-//     *(str)='\0';// from this this everything null
-//     printf("null at base : %s\n",str);
+//     *(str) = '\0'; // from this this everything null
+//     printf("null at base : %s\n", str);
+// }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -83,7 +84,7 @@
 //     free(ptr);
 // }
 
-//+++++++++++++++++++++++ doubt(why not?) ++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++ doubt(why not?) -- need malloc()++++++++++++++++++++++++++++++
 
 // #include <stdlib.h>
 // #include <stdio.h>
@@ -93,13 +94,13 @@
 // {
 //     char string[20] = "arvind";
 //     // char *ptr; /*seg fault */
-//     char *ptr=malloc(sizeof(char));
-//     strncpy(ptr,string,strlen(string));
-//     printf("string:%s\n",string);
-//     printf("ptr:%s\n",ptr);
+//     char *ptr = malloc(10 * sizeof(char));
+//     strncpy(ptr, string, strlen(string));
+//     printf("string:%s\n", string);
+//     printf("ptr:%s\n", ptr);
 
-//     *ptr='x';
-//     printf("%s\n",ptr);
+//     *ptr = 'x';
+//     printf("%s\n", ptr);
 // }
 
 //+++++++++++++++++++++++++++++++++++
@@ -112,7 +113,7 @@
 //     printf("%s\n", p);
 // }
 
-//++++++++++++ doubt (why not?) ++++++++++++++++++++++
+//++++++++++++ doubt (why not?) -- bcz pointer dont have mem to store each char ++++++++++++++++++++++
 
 // #include <stdio.h>
 // #include <stdlib.h>
@@ -131,9 +132,13 @@
 // #include <string.h>
 // int main()
 // {
-//     char *p=malloc(sizeof(char));
-//     strcpy(p,"avind");
+//     char *p = malloc(10 * sizeof(char));
+//     strcpy(p, "arvind");
 //     printf("%s\n", p);
+//     *(p) = 'x';
+//     *(p + 3) = '\0';
+//     printf("ptr:%s\n", p);
+//     printf("ptr:%c\n", *(p + 2));
 // }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -225,7 +230,6 @@
 //     }
 // }
 
-
 //+++++++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdio.h>
@@ -235,7 +239,7 @@
 // {
 //     char str[]="arvind";
 //     // char *ptr; // seg fault
-    // char *ptr=malloc(sizeof(char)*20);
+// char *ptr=malloc(sizeof(char)*20);
 //     memset(ptr,'\0',20);
 
 //     strcpy(ptr,str);
@@ -244,15 +248,15 @@
 // }
 
 //+++++++++++++++++++++++++++++++++++++++++++++
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <malloc.h>
-int main()
-{
-        char str[30];
-        printf("%ld\n",sizeof(str));
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// #include <malloc.h>
+// int main()
+// {
+//     char str[30];
+//     printf("%ld\n", sizeof(str));
 
-        char *ptr=malloc(sizeof(char)*20);
-        printf("%ld\n",sizeof(ptr)); // will return the size of ptr, not how much memory its is allocating
-}
+//     char *ptr = malloc(sizeof(char) * 20);
+//     printf("%ld\n", sizeof(ptr)); // will return the size of ptr, not how much memory its is allocating
+// }
