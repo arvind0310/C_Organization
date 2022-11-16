@@ -402,26 +402,42 @@ call from another thread. */
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main()
-{
-    char modelName[][32] = {
-        "arvind",
-        "chandan",
-        "ashu",
-        "adham",
-        "sakshi"};
-    if (strcmp(modelName[1], "")) // if empty is not there then go inside          OR        ** (strcmp(modelName[1], "")!=0) **
-    {
-        printf("hii\n");
-    }
-    else
-    {
-        printf("hello\n");
-    }
-}
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     char modelName[][32] = {
+//         "arvind",
+//         "chandan",
+//         "ashu",
+//         "adham",
+//         "sakshi"};
+//     if (strcmp(modelName[1], "")) // if empty is not there then go inside          OR        ** (strcmp(modelName[1], "")!=0) **
+//     {
+//         printf("hii\n");
+//     }
+//     else
+//     {
+//         printf("hello\n");
+//     }
+// }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+#include <stdio.h>
+
+int main()
+{
+    FILE *fp;
+    int num;
+
+    fp = fopen("file.txt", "w");
+    printf("Enter any number:\n");
+    scanf("%d", &num);
+    putw(num, fp);
+    fclose(fp);
+    printf("%d\n", num);
+
+    return 0;
+}

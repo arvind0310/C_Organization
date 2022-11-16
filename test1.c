@@ -641,11 +641,47 @@ int getChildProcessCount()
 // }
 
 //+++++++++++++++++++++++++++++++++++++++++
-#include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
-int main()
-{
-   int val = -1;
-   printf("%d\n", val);
-}
+// #include <stdio.h>
+// #include <stdint.h>
+// #include <stdbool.h>
+// int main()
+// {
+//    int val = -1;
+//    printf("%d\n", val);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//    char name[100] = "arvind yadav";
+//    printf("string name:%s\n", name);
+
+//    char *temp;
+//    strcpy(temp, name);
+//    printf("temp:%s\n", temp);
+//    // printf("string name:%s and temp:%s\n", name, temp);
+//    // printf("name:%s\n", strtok(temp, " ")); // seg fault
+//    // printf("res:%s\n", name);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//    char name[100] = "arvind yadav";
+//    printf("string name:%s\n", name);
+
+//    char *temp;
+//    strcpy(temp, "i am string");
+//    printf("temp:%s", temp);
+//    return 0;
+// }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++
