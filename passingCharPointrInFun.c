@@ -4,26 +4,25 @@
 #include <unistd.h>
 void fun(char *ptr)
 {
-    printf("length:%ld\n",strlen(ptr));
-    printf("%s\n",ptr);
-    printf("%c\n",*ptr); 
-    *(ptr+1)='x';
-    printf("%s\n",ptr);
+    printf("length:%ld\n", strlen(ptr)); // size of len of string pointed by ptr
+    printf("%s\n", ptr);
+    printf("%c\n", *ptr);
+    *(ptr + 1) = 'x';
+    printf("%s\n", ptr);
 }
 int main()
 {
-    char str[100]="arvindtttttt";
+    char str[100] = "arvindtttttt";
     fun(str);
 }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 // #include <stdlib.h>
 // #include <stdio.h>
 // #include <string.h>
 // #include <unistd.h>
-// char *fun(char *ptr) // this fun will return a pointer 
+// char *fun(char *ptr) // this fun will return a pointer
 // {
 //     return ptr;
 // }
@@ -40,8 +39,6 @@ int main()
 // }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -71,7 +68,6 @@ int main()
 //                                     //when not be allocating memory for double_pointer.
 //     return 0;
 // }
-
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -115,7 +111,7 @@ int main()
 //     fun(str);
 // }
 
-//++++++++++++++++++ method:2 +++++++++++++++++++++++++
+//++++++++++++++++++ method:2 ++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdlib.h>
 // #include <stdio.h>

@@ -1,5 +1,5 @@
 x=1
-for i in $(seq 1 6); do
+for i in $(seq 1 21); do
     for j in $(seq 1 5500); do
         date >>/tmp/portData-$x.txt
         snmpget -v2c -c public 10.0.10.150 .1.3.6.1.2.1.2.2.1.8.1 >>/tmp/portData-$x.txt

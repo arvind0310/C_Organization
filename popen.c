@@ -3,12 +3,13 @@
 
   fp = popen(cmd, "w"); >> this will directly run to your terminal..( see below code)
 
+feof -> if reaches to end file then return non zero other wise zero. (it ask end of file(eof) reached? no --> zero[failed], reached? yes. --> some value)
   -----------------------------------------
   # while (!feof(fp))
     if (fgets(value, 100, fp) != NULL)
 
 
-   # while (fscanf(fp, "%s", value) != EOF)
+   # while (fscanf(fp, "%s", value) != EOF) // one litral is given to value here
     if (fgets(value, 100, fp) != NULL)
 
 
@@ -37,7 +38,7 @@
 //     char value[100] = {0};
 //     FILE *fp = NULL;
 //     fp = fopen("sample.txt", "r");
-//     // now it will point to each litrall without spaces at once
+//     // now it will point to each litrall without spaces(till next space) at once
 //     // like 1st: arvind , 2nd: kumar ....
 //     fscanf(fp, "%s", value);
 //     printf("data = [%s]\n", value);

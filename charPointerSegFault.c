@@ -39,16 +39,16 @@
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-    char *temp;
-    temp = (char *)malloc(32 * sizeof(char));
-    strcpy(temp, "i am string");
-    printf("temp:%s\n", temp);
-    return 0;
-}
+// #include <stdlib.h>
+// #include <string.h>
+// #include <stdio.h>
+// int main()
+// {
+//     char *temp;
+//     temp = (char *)malloc(32 * sizeof(char));
+//     strcpy(temp, "i am string");
+//     printf("temp:%s\n", temp);
+//     return 0;
+// }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
