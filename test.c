@@ -425,19 +425,14 @@ call from another thread. */
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include <stdio.h>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     char a[10];
+//     a[10] = 0;
+//     return 0;
+// }
 
-int main()
-{
-    FILE *fp;
-    int num;
-
-    fp = fopen("file.txt", "w");
-    printf("Enter any number:\n");
-    scanf("%d", &num);
-    putw(num, fp);
-    fclose(fp);
-    printf("%d\n", num);
-
-    return 0;
-}
+//++++++++++++++++++++++++++++++++++++++++++++++++

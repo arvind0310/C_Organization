@@ -41,9 +41,20 @@
 // int main()
 // {
 //     printf("%c %c\n",48,49);
+//     printf("%d %d\n",'0','1');
+
 
 // }
 
+//+++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    printf("%c\n", 48+2);
+}
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // #include <stdio.h>
@@ -54,14 +65,9 @@
 //     printf("%d\n", ' '); // ascii of blank space.
 // }
 
+/*
 
-
-
-
-
-/* 
-
-for char -> int 
+for char -> int
 
 for an array to convert in int --> use atoi
 for an single char [0-9] like char a = '9', use int val = a - '0'.
@@ -69,15 +75,11 @@ for an single char [0-9] like char a = '9', use int val = a - '0'.
 
 for char -> ascii
 
-for char  --> int val = (int)ch 
+for char  --> int val = (int)ch
 for array --> int val = (int)*str; using *str we de-ref elem in base add to single char then -> int
 */
 
-
-
-
 //+++++++++++++++++ [char -> int] without atoi for 0-9 digit, wrong ++++++++++++++++++++++++++++++++++++++++++++++
-
 
 // #include <stdio.h>
 // #include <stdlib.h>
@@ -181,5 +183,18 @@ for array --> int val = (int)*str; using *str we de-ref elem in base add to sing
 //     printf("%d\n", '1'); // ascii value of 1
 //     printf("%c\n", 49);  // who has ascii 49, %d -> 49
 //     printf("%c\n", 65);  // who has ascii 65
+//     return 0;
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C program to print the value of '\0' and '0'
+// #include <stdio.h>
+
+// int main()
+// {
+//     // Print the value of '\0' and '0'
+//     printf("\\0 is %d\n", '\0');
+//     printf("0 is %d\n", '0');
 //     return 0;
 // }

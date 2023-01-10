@@ -44,31 +44,31 @@
 
 //++++++++++++++++++++++++++++++++++++++++++++
 
-// #include <stdlib.h>
-// #include <stdio.h>
-// #include <string.h>
-// #include <unistd.h>
-// int main()
-// {
-//     char str[100] = "fan0:stop";
-//     char *ptr1, *ptr2, *ptr3;
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+int main()
+{
+    char str[100] = "fan0:stop";
+    char *ptr1, *ptr2, *ptr3;
 
-//     ptr1 = strchr(str, ':');
-//     printf("%s\n", ptr1);
+    ptr1 = strchr(str, ':');
+    printf("%s\n", ptr1);
 
-//     // ptr2 = strstr(str, ":");
-//     // ptr2 = strstr(str, "an0");
-//     // ptr2 = strstr(str, ":st"); // show from first occ (:s..) // will show from second arg passed if avalable
-//     ptr2 = strstr(str, "an"); // if not found then return NULL -- if print NULL -> seg fault
-//     /* soln to escape from seg fault if no string stringa available in ptr */
-//     if (ptr2)
-//         printf("%s\n", ptr2);
-//     else
-//         printf("no string available for ptr2\n");
+    // ptr2 = strstr(str, ":");
+    // ptr2 = strstr(str, "an0");
+    // ptr2 = strstr(str, ":st"); // show from first occ (:s..) // will show from second arg passed if avalable
+    ptr2 = strstr(str, "an"); // if not found then return NULL -- if print NULL -> seg fault
+    /* soln to escape from seg fault if no string stringa available in ptr */
+    if (ptr2)
+        printf("%s\n", ptr2);
+    else
+        printf("no string available for ptr2\n");
 
-//     ptr3 = strtok(str, ":");
-//     printf("%s\n", ptr3);
-// }
+    ptr3 = strtok(str, ":");
+    printf("%s\n", ptr3);
+}
 
 //+++++++++++++++++++++++++++++++++++++++
 // #include <stdlib.h>
@@ -119,7 +119,7 @@ int main(void)
     strcpy(title, "C Programming");
     printf("String = %c\n", *title);
     printf("%p\n", title);
-    free(title);  // free the memory which has been allocated on the heap.
+    free(title); // free the memory which has been allocated on the heap.
     // title = NULL; // or title = 0;
     strcpy(title, "C++");
     printf("%s\n", title);

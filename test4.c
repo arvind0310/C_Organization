@@ -12,16 +12,16 @@
 // }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main()
-{
-    int i = 0, n = 5;
-    int j = 0;
-    while (i < n)
-    {
-        // printf("hii\n");
-        j++;
-    }
-}
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main()
+// {
+//     int i = 0, n = 5;
+//     int j = 0;
+//     while (i < n)
+//     {
+//         // printf("hii\n");
+//         j++;
+//     }
+// }
