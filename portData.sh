@@ -13,5 +13,4 @@ for i in $(seq 1 21); do
     cobo-d s3Push /tmp/portData-$x.txt /mansfield/portDataIssue/
     rm /tmp/portData-$x.txt
     x=$((x + 1))
-
 done
